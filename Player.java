@@ -5,16 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Player
+public abstract class Player implements Actions
 {
-    protected String playerName;
-
-    public Player(String playerName){
-        this.playerName = playerName;
-    }
-
-    public String getPlayerName(){
-        return playerName;
-    }
-
+    
 }

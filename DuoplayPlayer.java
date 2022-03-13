@@ -7,19 +7,20 @@
  */
 public abstract class DuoplayPlayer 
 {
-    String playername;    
-
+    String playerName;
+    boolean isTurn;
     public DuoplayPlayer(String playerName){
-        getPlayerName();
+        this.playerName = playerName;
+        this.isTurn = false;
     }
 
     public String getPlayerName(){
         return this.playerName;
     }
-
-    public abstract GameState move(){
-
     
-    }
+    public abstract GameState move(DuoPlay player);
+    
+    
+    
 
 }
