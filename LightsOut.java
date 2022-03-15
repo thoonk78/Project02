@@ -8,12 +8,18 @@ import java.util.Random;
 public class LightsOut extends DuoPlay
 {
     boolean[][] board;
-    public LightsOut(){
-    
+    public LightsOut(LightsOutPlayer player1, LightsOutPlayer player2, int boardSize){
+        board = new boolean [boardSize][boardSize];
+        
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++)
+            {
+                board[i][j] = false;   
+            }
+        }
     
     }
-    public void randomize(int n){
-        board = new boolean [n][n];
+    public void randomize(boolean[][] board){
         Random rand = new Random();
         
         for(int i = 0; i < board.length; i++){
@@ -32,21 +38,23 @@ public class LightsOut extends DuoPlay
         }
     }
     public void press(int row, int col){
-        
-        if(board[row][col] == true){
-            this.board[row][col] = false;
-        }
-        else{
-            this.board[row][col] = false;
+        if(row > -1 && col > -1)
+        {
+            if(this.board[row][col] == true){
+                board[row][col] = false;
+            }
+            else{
+                this.board[row][col] = true;
+            }
         }
         //left
-        press(row, Math.max((col - 1) , 0));
+        press((row - 1) , col);
         //right
-        press(row, Math.max((col + 1) , 0));
+        press((row + 1) , col);
         //top
-        press(Math.max((row - 1), 0), col);
+        press(row , (col - 1));
         //bottom
-        press(Math.max((row + 1), 0), col);
+        press(row , (col + 1));
         
     }
     public boolean isDark(){

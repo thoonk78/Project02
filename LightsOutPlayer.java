@@ -10,11 +10,11 @@ public abstract class LightsOutPlayer extends DuoplayPlayer
     LightsOutPlayer(String playerName){
         super (playerName);
     }
-    @override
+    //@override
     public GameState move(DuoPlay GameState){
         GameState state = GameState.IN_PROGRESS;
         Scanner scnr = new Scanner(System.in);
-        if(GameState == IN_PROGRESS){
+        if(GameState == GameState.IN_PROGRESS){
             int row = scnr.nextInt();
             int col = scnr.nextInt();
         }
