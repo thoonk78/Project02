@@ -5,18 +5,35 @@ import java.util.Scanner;
  * @author (your name)
  * @version (a version number or a date)
  */
-public abstract class LightsOutPlayer extends DuoplayPlayer
+public class LightsOutPlayer extends DuoplayPlayer
 {
     LightsOutPlayer(String playerName){
         super (playerName);
     }
-    //@override
-    public GameState move(DuoPlay GameState){
-        GameState state = GameState.IN_PROGRESS;
+    @Override
+    public GameState move(DuoPlay currGame){
+        //GameState state = GameState.IN_PROGRESS;
         Scanner scnr = new Scanner(System.in);
-        if(GameState == GameState.IN_PROGRESS){
+        GameState state = currGame.state;
+        if(currGame.state == GameState.IN_PROGRESS){
+            System.out.println("Enter the coordinates for the light you want to toggle");
+            
+            System.out.print("row : ");
             int row = scnr.nextInt();
+            System.out.print("column : ");
             int col = scnr.nextInt();
+            
+            ((LightsOut)(currGame)).press(row, col);
+
         }
+        if(((LightsOut)(currGame)).isDark())
+        {
+            state = GameState.WON;
+        }
+        else
+        {
+            state = GameState.IN_PROGRESS;   
+        }
+        return state;
     }
 }
