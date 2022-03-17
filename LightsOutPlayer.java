@@ -15,6 +15,8 @@ public class LightsOutPlayer extends DuoplayPlayer
         //GameState state = GameState.IN_PROGRESS;
         Scanner scnr = new Scanner(System.in);
         GameState state = currGame.state;
+        
+        System.out.printf("%s's turn\n", super.getPlayerName());
         if(currGame.state == GameState.IN_PROGRESS){
             System.out.println("Enter the coordinates for the light you want to toggle");
             

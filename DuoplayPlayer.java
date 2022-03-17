@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Abstract class DuoplayPlayer - write a description of the class here
  *

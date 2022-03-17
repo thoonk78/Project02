@@ -8,5 +8,4 @@
 public interface TextualInterface
 {
     public void showGame();
-    //public void move();
 }

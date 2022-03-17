@@ -2,7 +2,7 @@
 comment0.target=DuoPlay
 comment0.text=\r\n\ Abstract\ class\ DuoPlayer\ -\ write\ a\ description\ of\ the\ class\ here\r\n\r\n\ @author\ (your\ name\ here)\r\n\ @version\ (version\ number\ or\ date\ here)\r\n
 comment1.params=player1\ player2
-comment1.target=void\ DuoplayPlayer(DuoplayPlayer,\ DuoplayPlayer)
+comment1.target=DuoPlay(DuoplayPlayer,\ DuoplayPlayer)
 comment2.params=
 comment2.target=void\ play()
 numComments=3

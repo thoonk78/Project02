@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 /**
  * Write a description of class LightsOut here.
  *
@@ -8,7 +9,20 @@ import java.util.Random;
 public class LightsOut extends DuoPlay
 {
     boolean[][] board;
+    Scanner scnr = new Scanner (System.in);
     public LightsOut(LightsOutPlayer player1, LightsOutPlayer player2, int boardSize){
+        super((DuoplayPlayer)player1, (DuoplayPlayer)player2);
+        
+        System.out.println("What board size would you like to play on? : ");
+        boardSize = scnr.nextInt();
+        
+        while(boardSize < 0)
+        {
+            System.out.println("The board size must be positive");
+            System.out.println("What board size would you like to play on? : ");
+            boardSize = scnr.nextInt();
+        }
+        
         board = new boolean [boardSize][boardSize];
         
         for(int i = 0; i < board.length; i++){
@@ -17,7 +31,7 @@ public class LightsOut extends DuoPlay
                 board[i][j] = false;   
             }
         }
-    
+        randomize(this.board);
     }
     public void randomize(boolean[][] board){
         Random rand = new Random();
@@ -31,31 +45,37 @@ public class LightsOut extends DuoPlay
                 else if(randomLight == 1){
                      board[i][j] = true;   
                 }
-                else{
-                    System.out.println("Wrong range dummy lmao");   
-                }
             }
+        }
+        if(isDark())
+        {
+            randomize(board);   
         }
     }
     public void press(int row, int col){
-        if(row > -1 && col > -1)
+        while(row < 0 || row > board.length || col < 0 || col > board.length)
         {
-            if(this.board[row][col] == true){
-                board[row][col] = false;
+            System.out.println("Invalid input. Please enter a row and column from the coordinates shown");
+            
+            System.out.print("row: ");
+            row = scnr.nextInt();  
+            System.out.print("column: ");
+            col = scnr.nextInt();  
+        }
+        for(int i = row - 1; i <= row + 1; i++)
+        {
+            if(i != row && i > -1 && i < board.length && col > -1 && col < board.length)
+            {
+                this.board[i][col] = !this.board[i][col];   
             }
-            else{
-                this.board[row][col] = true;
+            for(int j = col - 1; j <= col + 1; j++)
+            {
+                if(row > -1 && row < board.length && j > -1 && j < board.length)
+                {
+                    this.board[row][j] = !this.board[row][j];
+                }
             }
         }
-        //left
-        press((row - 1) , col);
-        //right
-        press((row + 1) , col);
-        //top
-        press(row , (col - 1));
-        //bottom
-        press(row , (col + 1));
-        
     }
     public boolean isDark(){
         boolean isDark = true;
@@ -87,11 +107,12 @@ public class LightsOut extends DuoPlay
                 {
                     board += "_";   
                 }
-                board += "\n";
+                //board += "\n";
             }
+            board += "\n";
         }
         
-        System.out.println(this.board.toString());
+        //System.out.println(this.board.toString());
         return board;
     }
     @Override
