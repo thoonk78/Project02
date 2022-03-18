@@ -2,9 +2,10 @@ import java.util.Scanner;
 /**
  * Abstract class DuoplayPlayer - write a description of the class here
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Samuel Ayoade & Keith Thoong
+ * @version 03/18/2022
  */
+
 public abstract class DuoplayPlayer 
 {
     String playerName;
