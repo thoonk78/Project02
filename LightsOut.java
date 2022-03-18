@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class LightsOut extends DuoPlay
 {
     boolean[][] board;
+    int testing;
     Scanner scnr = new Scanner (System.in);
     public LightsOut(LightsOutPlayer player1, LightsOutPlayer player2, int boardSize){
         super((DuoplayPlayer)player1, (DuoplayPlayer)player2);
