@@ -1,9 +1,9 @@
 
 /**
- * Abstract class DuoPlayer - write a description of the class here
+ * Conducts a two player game with a winning state
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Keith Thoong, Samuel Ayoade
+ * @version 3/18/2022
  */
 public abstract class DuoPlay extends Game
 {
@@ -11,11 +11,19 @@ public abstract class DuoPlay extends Game
     DuoplayPlayer player2;
     GameState state = GameState.IN_PROGRESS;
     boolean isPlayer1Turn;
+    /**
+     * Duoplay constructor
+     * 
+     * @param player1 the first player
+     * @param player2 the seond player
+     */
     public DuoPlay(DuoplayPlayer player1, DuoplayPlayer player2){
         this.player1 = player1;
         this.player2 = player2;
     }
-    
+    /**
+     * Initiates the game and checks for endgame state
+     */
     public void play(){
         //GameState state = GameState.IN_PROGRESS;
         while(state == GameState.IN_PROGRESS){
