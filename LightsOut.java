@@ -3,8 +3,8 @@ import java.util.Scanner;
 /**
  * Write a description of class LightsOut here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Samuel Ayoade & Keith Thoong
+ * @version 03/18/2002
  */
 public class LightsOut extends DuoPlay
 {
