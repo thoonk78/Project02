@@ -8,12 +8,21 @@ import java.util.Scanner;
 public class BattleshipPlayer extends DuoplayPlayer
 {
     Scanner scnr = new Scanner(System.in);
+    /**
+     * Battleship player constructor
+     * 
+     * @param playerName the player's name
+     */
     BattleshipPlayer(String playerName){
         super(playerName);
     }    
+    /**
+     * Carries out the player's move
+     * 
+     * @param currGame the current game
+     */
     @Override
     public GameState move(DuoPlay currGame){
-        //GameState state = GameState.IN_PROGRESS;
         Scanner scnr = new Scanner(System.in);
         GameState state = currGame.state;
         
@@ -26,13 +35,13 @@ public class BattleshipPlayer extends DuoplayPlayer
             System.out.print("column : ");
             int col = scnr.nextInt();
             
+            //Toggles the players turn
             ((Battleship)(currGame)).toggleTurn();
             ((Battleship)(currGame)).press(row, col);
 
         }
         if(((Battleship)(currGame)).noBoats())
         {
-            //((Battleship)(currGame)).toggleTurn();
             state = GameState.WON;
         }
         else
