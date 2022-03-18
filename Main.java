@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
- * Write a description of class Project02Driver here.
+ * Lets user select game and runs the selelcted game.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Samuel Ayoade & Keith Thoong
+ * @version 03/18/2022
  */
 public class Main
 {
@@ -13,6 +13,12 @@ public class Main
         gameSelect();
 
     }
+    
+    
+    /**
+     * Method Prompts for palyers names and runs user selceted game
+     *
+     */
     public static void gameSelect()
     {
         System.out.printf("%-33s\nWhat game would you like to play?: ", "[Lights Out] [Battleship]");
