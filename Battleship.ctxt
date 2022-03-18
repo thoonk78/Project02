@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Battleship
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Battleship\ here.\r\n\r\n\ @author\ ()\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=player1\ player2\ size
+comment1.target=Battleship(BattleshipPlayer,\ BattleshipPlayer,\ int)
+comment10.params=
+comment10.target=void\ showGame()
+comment2.params=
+comment2.target=void\ setBoats()
+comment3.params=row\ col\ limit\ isHorizontal
+comment3.target=void\ fillBoat(int,\ int,\ int,\ boolean)
+comment4.params=row\ col\ limit\ isHorizontal
+comment4.target=boolean\ lineEmpty(int,\ int,\ int,\ boolean)
+comment5.params=row\ col
+comment5.target=void\ press(int,\ int)
+comment6.params=
+comment6.target=void\ toggleTurn()
+comment7.params=showBoats
+comment7.target=java.lang.String\ toString(boolean)
+comment8.params=
+comment8.target=boolean\ noBoats()
+comment9.params=showBoats
+comment9.target=void\ showGame(boolean)
+numComments=11

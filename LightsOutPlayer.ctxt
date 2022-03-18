@@ -5,4 +5,6 @@ comment1.params=playerName
 comment1.target=LightsOutPlayer(java.lang.String)
 comment2.params=currGame
 comment2.target=GameState\ move(DuoPlay)
-numComments=3
+comment3.params=
+comment3.target=void\ winningMessege()
+numComments=4

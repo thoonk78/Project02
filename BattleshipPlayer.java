@@ -1,15 +1,16 @@
 import java.util.Scanner;
 /**
- * Write a description of class LightsOutPlayer here.
+ * Write a description of class BattleshipPlayer here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class LightsOutPlayer extends DuoplayPlayer
+public class BattleshipPlayer extends DuoplayPlayer
 {
-    LightsOutPlayer(String playerName){
-        super (playerName);
-    }
+    Scanner scnr = new Scanner(System.in);
+    BattleshipPlayer(String playerName){
+        super(playerName);
+    }    
     @Override
     public GameState move(DuoPlay currGame){
         //GameState state = GameState.IN_PROGRESS;
@@ -18,19 +19,20 @@ public class LightsOutPlayer extends DuoplayPlayer
         
         System.out.printf("%s's turn\n", super.getPlayerName());
         if(currGame.state == GameState.IN_PROGRESS){
-            System.out.println("Enter the coordinates for the light you want to toggle");
+            System.out.println("Enter the coordinates you'd like to strike");
             
             System.out.print("row : ");
             int row = scnr.nextInt();
             System.out.print("column : ");
             int col = scnr.nextInt();
             
-            ((LightsOut)(currGame)).press(row, col);
+            ((Battleship)(currGame)).toggleTurn();
+            ((Battleship)(currGame)).press(row, col);
 
         }
-        if(((LightsOut)(currGame)).isDark())
+        if(((Battleship)(currGame)).noBoats())
         {
-            winningMessege();
+            //((Battleship)(currGame)).toggleTurn();
             state = GameState.WON;
         }
         else
@@ -38,9 +40,5 @@ public class LightsOutPlayer extends DuoplayPlayer
             state = GameState.IN_PROGRESS;   
         }
         return state;
-    }
-    public void winningMessege()
-    {
-        System.out.printf("%s Won!\n", super.getPlayerName());
     }
 }
