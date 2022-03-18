@@ -2,8 +2,8 @@
 /**
  * Write a description of interface TextualInterface here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Keith Thoong, Samuel Ayoade
+ * @version 3/18/2022
  */
 public interface TextualInterface
 {
