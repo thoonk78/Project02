@@ -7,5 +7,8 @@
  */
 public interface TextualInterface
 {
+    /**
+     * Shows the game
+     */
     public void showGame();
 }
