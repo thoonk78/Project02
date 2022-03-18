@@ -1,9 +1,9 @@
 
 /**
- * Enumeration class GameState - write a description of the enum class here
+ * Enumeration class GameState - Keeps track of the current game state
  *
- * @author (your name here)
- * @version (version number or date here)
+*  Samuel Ayoade & Keith Thoong
+ * @version 03/18/2022
  */
 
 public enum GameState
